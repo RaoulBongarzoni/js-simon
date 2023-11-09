@@ -1,5 +1,15 @@
 //genero 5 numeri casuali
     //funzione math random
+    //mostro a schermo i 5 numeri
+
+
+const random=random5();
+
+for (let i = 0; i<5 ; i++){
+
+    document.getElementById("numeri").innerHTML += ` <span class="text-white"> ${random[i]} </span>`;
+}
+
 
 
 
