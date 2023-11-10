@@ -1,14 +1,25 @@
 //funzione randomizzazione numeri
 
 
-function random5(){
+function get_n_random(n){
     let array_random = [];
 
-    for (let i = 0; i < 5; i++){
-        array_random[i] = parseInt(Math.floor(Math.random() * 10));
+
+    //versione con ripetizione
+/*     for (let i = 0; i < n; i++){
+        array_random[i] = parseInt(Math.floor(Math.random() * 100));
+
     }
-    console.log("assegno l'array");
-    console.log(array_random);
+ */
+    //versione post correzione
+    for (let i = 0; i < n; i++){
+        let num = parseInt(Math.floor(Math.random() * 100));
+        if(array_random.includes(num)){
+            i--;
+        }else{
+            array_random.push(num);
+        }
+    }
     
     return array_random;
 
@@ -16,33 +27,34 @@ function random5(){
 }
 
 
+//array in input
 
 function number_in(){
     
-    for (let i = 0; i<5; i++){
+    for (let i = 0; i<n; i++){
         my_array[i]=prompt(`inserisci il ${name_helper[i]} numero`);
     }
-    console.log(array);
     
 }
 
+//pulisci schermo
+function clean_screen(){
 
-function cleanScreen(){
     document.getElementById("numeri").innerHTML = "";
 }
 
 
-
+//verifica e stampa
 function verify_and_print(){
 
-    for (let i = 0; i<5; i++){
-        if (random[i] == my_array[i]){
+    for (let i = 0; i<n; i++){
+        if (random_array[i] == my_array[i]){
 
-            document.getElementById("numeri").innerHTML += ` <span class="text-light"> ${random[i]} </span>`;
+            document.getElementById("numeri").innerHTML += ` <span class="text-light"> ${random_array[i]} </span>`;
 
         }else {
 
-            document.getElementById("numeri").innerHTML += ` <span class="text-danger"> ${random[i]} </span>`;
+            document.getElementById("numeri").innerHTML += ` <span class="text-danger"> ${random_array[i]} </span>`;
 
         }
     }

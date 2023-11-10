@@ -1,20 +1,20 @@
 
-
-const random=random5();
+const n = parseInt(prompt("quanti numeri vuoi visualizzare?" , "5"));
+const random_array=get_n_random(n);
 var my_array=[];
-const name_helper=["primo", "secondo", "terzo", "quarto", "quinto"]
+const name_helper=["primo", "secondo", "terzo", "quarto", "quinto","sesto","settimo","ottavo","nono","decimo"]
 
 //genero 5 numeri casuali
     //funzione math random
     //mostro a schermo i 5 numeri
-for (let i = 0; i<5 ; i++){
+for (let i = 0; i<n ; i++){
 
-    document.getElementById("numeri").innerHTML += ` <span class="text-white"> ${random[i]} </span>`;
+    document.getElementById("numeri").innerHTML += ` <span class="text-white"> ${random_array[i]} </span>`;
 }
 
 //attendo 30 secondi
     //timing function
-setTimeout(cleanScreen, 10000);  //30 secondi era troppo tempo :)
+setTimeout(clean_screen, 10000);  //30 secondi era troppo tempo :)
 
 //chiedo uno alla volta i numeri visualizzati
 setTimeout(number_in, 10100);
