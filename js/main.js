@@ -16,48 +16,17 @@ for (let i = 0; i<5 ; i++){
 
 //attendo 30 secondi
     //timing function
-setTimeout( cleanScreen , 10000);
+setTimeout(cleanScreen, 10000);  //30 secondi era troppo tempo :)
 
 //chiedo uno alla volta i numeri visualizzati
 setTimeout(number_in, 10100);
 
 
 
+//mostro a schermo quanti numeri erano corretti
+    //interazione html
 setTimeout(verify_and_print, 10100);
 
 
-function number_in(){
-    
-    for (let i = 0; i<5; i++){
-        my_array[i]=prompt(`inserisci il ${name_helper[i]} numero`);
-    }
-    console.log(array);
-    
-}
 
-
-function cleanScreen(){
-    document.getElementById("numeri").innerHTML = "";
-}
-
-
-
-function verify_and_print(){
-
-    for (let i = 0; i<5; i++){
-        if (random[i] == my_array[i]){
-
-            document.getElementById("numeri").innerHTML += ` <span class="text-light"> ${random[i]} </span>`;
-
-        }else {
-
-            document.getElementById("numeri").innerHTML += ` <span class="text-danger"> ${random[i]} </span>`;
-
-        }
-
-
-    }
-}
-//mostro a schermo quanti numeri erano corretti
-    //interazione html
 
